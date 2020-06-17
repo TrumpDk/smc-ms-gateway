@@ -1,0 +1,5 @@
+FROM openjdk:8-jdk-alpine
+VOLUME /api-gateway
+ADD /target/smc-ms-gateway-1.0.0-SNAPSHOT.jar apigw.jar
+EXPOSE 9000
+ENTRYPOINT ["java", "-Dspring.profiles.active=dev", "-jar", "apigw.jar"]
